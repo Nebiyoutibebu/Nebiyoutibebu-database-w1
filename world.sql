@@ -28,8 +28,7 @@ insert into country value(009, “china”,1435313098, “Asia”, 9597000);
 insert into country value(010, “Japan”, 126754072, “Asia”, 377973);
 
 ========= 
-insert into cities values(CityId, CitiyName, CityPopulation, CitiesCountry)
-drop table if exists city;
+
 
 CREATE TABLE city 
 ( CityId VARCHAR(3)NOT NULL,
