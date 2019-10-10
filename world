@@ -1,9 +1,10 @@
+
 drop database if exists world;
 create database if not exists world;
 use world;
 show tables;
 drop table if exists country;
-​
+
 CREATE TABLE country 
 ( CountryID VARCHAR(3)NOT NULL,
 Countryname CHAR (52) NOT NULL,
@@ -14,7 +15,7 @@ primary key (CountryID)
   )ENGINE=InnoDB DEFAULT CHARSET=latin1;
   
 show tables;
-​
+
 insert into country value(001, “Sweden”, 9,995,000, “Europe”, 450295);
 insert into country value(002, “Denmark”, 5749000, “Europe”, 42933);
 insert into country value(003,“Norway”,52580000, “Europe”, 385203);
@@ -25,7 +26,6 @@ insert into country value(007, “Kenya”, 49007000, “Africa”, 580367);
 insert into country value(008, “Holland”, 17008000, “Europe”, 41543);
 insert into country value(009, “china”,1435313098, “Asia”, 9597000);
 insert into country value(010, “Japan”, 126754072, “Asia”, 377973);
-​
 
 ========= 
 insert into cities values(CityId, CitiyName, CityPopulation, CitiesCountry)
@@ -50,23 +50,3 @@ insert into city value(107, “Nairobi”, 3134000, 7);
 insert into city value(108, “Amsterdam”, 821752, 8);
 insert into city value(109, “Beijing“, 21054000, 9);
 insert into city value(110, “Tokyo”, 9273000, 10);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
