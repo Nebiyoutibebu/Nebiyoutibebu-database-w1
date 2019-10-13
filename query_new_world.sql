@@ -1,58 +1,48 @@
-
-1.
-What are the names of countries with population greater than 8 million?
-SELECT Name, Population
+-- 1 
+SELECT country.Name, country.Population
 FROM country
-WHERE Population > 8000000;
+WHERE country.Population > 8000000;
 
-==
-2.What are the names of countries that have “land” in their names ?
-SELECT CountryName
-from country
-where countryName 
-"%land%";
-==
-3.What are the names of the cities with population in between 500,000 and 1 million ?
+-- 2
+
 SELECT Name
+FROM country
+WHERE Name LIKE "%land%";
+-- 3
+SELECT Name, Population
 FROM city
 WHERE Population BETWEEN 500000 AND 1000000;
-==
-4.What's the name of all the countries on the continent ‘Europe’ ?
+
+-- 4 
 SELECT Name
 FROM country
-WHERE Continent = 'Europe';
+WHERE Continent = "Europe";
 
-==
-5.List all the countries in the descending order of their surface areas.
-SELECT Name,
+-- 5
+SELECT Name, SurfaceArea
 FROM country
-order by SurfaceArea DESC;
+ORDER BY SurfaceArea DESC;
 
-6.What are the names of all the cities in the Netherlands?
-SELECT CityName
-FROM country
-WHERE Country = 'Netherlands';
-==
-7.What is the population of Rotterdam ?
-SELECT Population
+-- 6
+SELECT city.Name, country.Name
+FROM country INNER JOIN city ON city.CountryCode = country.Code
+WHERE country.Name = "Netherlands";
+
+-- 7
+SELECT Name, Population
 FROM city
-WHERE CitiesName = 'Rotterdam';
+WHERE Name = "Rotterdam";
 
-==
-8.What's the top 10 countries by Surface Area ?
-SELECT Name
+-- 8 
+SELECT Name, SurfaceArea
 FROM country
-order by SurfaceArea DESC limit 10;
-==
+ORDER BY SurfaceArea DESC LIMIT 10;
 
-9.What's the top 10 most populated cities?
- SELECT CityName
- FROM City
- Population FROM city ORDER BY Population DESC limit 10;
+-- 9
+SELECT Name, Population
+FROM city
+ORDER BY Population DESC LIMIT 10;
 
-==
-10.What is the population of the world ?
-SELECT sum
-FROM country;
-SELECT sum(Population) As WorldsPopulation
-;
+-- 10
+
+SELECT sum(Population) As WorldsPopulation FROM country;
